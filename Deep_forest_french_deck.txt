@@ -59,7 +59,7 @@ Ete
 Automne
 Hiver
 endsequence
-[symbole_dos]=".\symbole\[nom_dos].png"
+;[symbole_dos]=".\ressources\symbole\[nom_dos].png"
 [couleur_du_bord_du_dos]=[couleur_[nom_dos]]
 ;definition de l'image de fond
 Brush=[range_arriere],solid
@@ -71,7 +71,7 @@ Edge=[range_arriere],solid
 IMAGE =[range_arriere], [image_dos], 0,0,100%,100%, 0,CN ,100
 ;IMAGE =[range_arriere], [image_dos], [bleed_dist],[bleed_dist],100%-2*[bleed_dist],100%-2*[bleed_dist], 0,PN ,100
 ;htmltext=[range_arriere],[nom_dos],15%,5%,80%,20%,#FFFFFF,0,TEB,100,season_font
-IMAGE =[range_arriere], [symbole_dos], [bleed_dist]*2, [bleed_dist]*1.5, 15%, 15%, 0, TPN,100
+;IMAGE =[range_arriere], [symbole_dos], [bleed_dist]*2, [bleed_dist]*1.5, 15%, 15%, 0, TPN,100
 Roundrect=[range_arriere],[bleed_dist]/2,[bleed_dist]/2,100%-2*[bleed_dist]/2,100%-2*[bleed_dist]/2,[couleur_du_bord_du_dos],EMPTY,[bleed_dist],0.3,0.3,R
 BLEED=[range_arriere],[bleed_dist]/2,[bleed_dist]/2,100%-2*[bleed_dist]/2,100%-2*[bleed_dist]/2
 
