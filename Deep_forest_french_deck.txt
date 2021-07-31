@@ -1,0 +1,119 @@
+; definition des couleurs
+[couleur_blanche]=#FFFFFF
+[couleur_grise]=#969696
+[couleur_noire]=#000000
+
+;using https://www.schemecolor.com/power-pastels.php
+[couleur_printemps]=#b1c294
+[couleur_ete]=#eecab6
+[couleur_automne]=#cc859a
+[couleur_hiver]=#9eaeb2
+
+
+[titre_du_jeu]="La forêt tortueuse"
+PAGE=21,29.7,PORTRAIT,HVD
+
+cardsize=9.1,6.4
+[font_titre]=Leander
+[font]=Minion Pro
+
+[taille_saison]=22
+[taille_texte]=14
+
+[bleed_dist]=0.3
+BORDER=NONE,#000000,0.0,crossdot,,0.3
+BLEED=,[bleed_dist],[bleed_dist],100%-2*[bleed_dist],100%-2*[bleed_dist]
+
+
+;font defision
+htmlfont=season_font,[font_titre],[taille_saison],,#000000,center
+htmlfont=text_normal,[font],[taille_texte],,#000000,center
+htmlfont=text_bold,[font],[taille_texte],B,#000000,center
+
+;replace
+HTMLKEY = [range], "**_" , "<b>",,C
+HTMLKEY = [range], "_**" , "</b>",,C
+;HTMLKEY = [range], "<br>" , "",,C
+HTMLKEY=[range],"*Choisissez-en une*","<i>Choisissez-en une</i>",,C
+
+
+
+linksep=;
+linkstyles=<text_bold>,</text_bold>
+LINK = .\ressources\reduced_deck.csv
+[couleur_du_bord]=[couleur_[Saison]]
+[symbole]=".\ressources\symbole\[saison].png"
+
+[range]="1-{(Saison)}"
+;definition des backs
+[range_arriere]={(Saison)+1}-{(Saison)+4}
+sequence=image_dos
+".\ressources\image\background_printemps.png"
+".\ressources\image\background_ete.png"
+".\ressources\image\background_automne.png"
+".\ressources\image\background_hiver.png"
+endsequence
+sequence=nom_dos
+Printemps
+Ete
+Automne
+Hiver
+endsequence
+[symbole_dos]=".\symbole\[nom_dos].png"
+[couleur_du_bord_du_dos]=[couleur_[nom_dos]]
+;definition de l'image de fond
+Brush=[range_arriere],solid
+Edge=[range_arriere],SOLID
+;RECTANGLE=[range_arriere],0,0,100%,100%,[couleur_du_bord_du_dos],[couleur_du_bord_du_dos],0.0001
+;Roundrect=[range_arriere],[bleed_dist],[bleed_dist],100%-2*[bleed_dist],100%-2*[bleed_dist],,[couleur_blanche],0,0.3,0.3,R
+Brush=[range_arriere],solid
+Edge=[range_arriere],solid
+IMAGE =[range_arriere], [image_dos], 0,0,100%,100%, 0,CN ,100
+;IMAGE =[range_arriere], [image_dos], [bleed_dist],[bleed_dist],100%-2*[bleed_dist],100%-2*[bleed_dist], 0,PN ,100
+;htmltext=[range_arriere],[nom_dos],15%,5%,80%,20%,#FFFFFF,0,TEB,100,season_font
+IMAGE =[range_arriere], [symbole_dos], [bleed_dist]*2, [bleed_dist]*1.5, 15%, 15%, 0, TPN,100
+Roundrect=[range_arriere],[bleed_dist]/2,[bleed_dist]/2,100%-2*[bleed_dist]/2,100%-2*[bleed_dist]/2,[couleur_du_bord_du_dos],EMPTY,[bleed_dist],0.3,0.3,R
+BLEED=[range_arriere],[bleed_dist]/2,[bleed_dist]/2,100%-2*[bleed_dist]/2,100%-2*[bleed_dist]/2
+
+
+
+
+;definition des faces avants
+;Definition du fond
+Brush=[range],solid
+Edge=[range],null
+RECTANGLE=[range],0,0,100%,100%,[couleur_du_bord],[couleur_du_bord],0.0001
+Roundrect=[range],[bleed_dist],[bleed_dist],100%-2*[bleed_dist],100%-2*[bleed_dist],,[couleur_blanche],0,0.3,0.3,R
+
+;Definition de la face avant
+Brush=[range],solid
+Edge=[range],solid
+
+htmlmargins=text_normal,0,0,0,0,center
+;htmlmargins=text_bold,0,0,0,0,center
+htmltext=[range],[Texte],10%,15%,80%,70%,#FFFFFF,0,EFTO,100,text_normal
+[symbol_distance]=[bleed_dist]
+IMAGE =[range], [symbole],[symbol_distance],[symbol_distance], 15%, 15%, 0, TPN,100
+htmltext=[range],[Chiffre],85%-[symbol_distance], [symbol_distance],15%,15%,#FFFFFF,0,TE,100,season_font
+
+[face_printemps]=LABELRANGE([Saison],"Printemps")
+[dos_printemps]={(Saison)+1}
+[face_ete]=LABELRANGE([Saison],"Ete")
+[dos_ete]={(Saison)+2}
+[face_automne]=LABELRANGE([Saison],"Automne")
+[dos_automne]={(Saison)+3}
+[face_hiver]=LABELRANGE([Saison],"Hiver")
+[dos_hiver]={(Saison)+4}
+;
+duplex=[face_printemps],[dos_printemps]
+duplex=[face_ete],[dos_ete]
+duplex=[face_automne],[dos_automne]
+duplex=[face_hiver],[dos_hiver]
+;Print=duplex
+;duplex=1,[dos_printemps]
+;duplex=16,[dos_ete]
+;duplex=27,[dos_automne]
+;duplex=40,[dos_hiver]
+
+Print=duplex
+
