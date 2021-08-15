@@ -13,7 +13,7 @@
 [titre_du_jeu]="La forêt tortueuse"
 PAGE=21,29.7,PORTRAIT,HVD
 
-cardsize=9.1,6.4
+cardsize=9.4,6.9
 [font_titre]=Leander
 [font]=Minion Pro
 
@@ -40,7 +40,7 @@ HTMLKEY=[range],"*Choisissez-en une*","<i>Choisissez-en une</i>",,C
 
 linksep=;
 linkstyles=<text_bold>,</text_bold>
-LINK = .\ressources\reduced_deck.csv
+LINK = .\ressources\french_deck.csv
 [couleur_du_bord]=[couleur_[Saison]]
 [symbole]=".\ressources\symbole\[saison].png"
 
