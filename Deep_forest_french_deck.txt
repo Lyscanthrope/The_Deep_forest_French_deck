@@ -20,12 +20,13 @@ cardsize=9.4,6.9
 [taille_saison]=22
 [taille_texte]=14
 
-[bleed_dist]=0.3
+[bleed_dist]=0.5
 BORDER=NONE,#000000,0.0,crossdot,,0.3
+gap=0.3,01
 BLEED=,[bleed_dist],[bleed_dist],100%-2*[bleed_dist],100%-2*[bleed_dist]
 
 
-;font defision
+;font definition
 htmlfont=season_font,[font_titre],[taille_saison],,#000000,center
 htmlfont=text_normal,[font],[taille_texte],,#000000,center
 htmlfont=text_bold,[font],[taille_texte],B,#000000,center
