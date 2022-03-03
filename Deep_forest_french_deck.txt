@@ -13,7 +13,8 @@
 [titre_du_jeu]="La forêt tortueuse"
 PAGE=21,29.7,PORTRAIT,HVD
 
-cardsize=9.4,6.9
+cardsize=8.8,5.8
+;cardsize=9.4,6.9
 [font_titre]=Leander
 [font]=Minion Pro
 
